@@ -1,0 +1,68 @@
+{
+ "fields": [
+  {
+   "name": "Parent Department",
+   "constraints": {
+     "required": true,
+     "description": "For a department itself, just repeat the department name here."
+   }
+  },
+  {
+   "name": "Organisation",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Unit",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Reporting Senior Post",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Grade",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Payscale Minimum (£)",
+   "constraints": {
+     "required": true,
+     "type": http://www.w3.org/2001/XMLSchema#int,
+   }
+  },
+  {
+   "name": "Payscale Maximum (£)",
+   "constraints": {
+     "required": true,
+     "type": http://www.w3.org/2001/XMLSchema#int,
+   }
+  },
+  {
+   "name": "Generic Job Title",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Number of Posts in FTE",
+   "constraints": {
+     "required": true,
+     "type": "http://www.w3.org/2001/XMLSchema#float"
+   }
+  },
+  {
+   "name": "Professional/Occupational Group",
+   "constraints": {
+     "required": true
+   }
+  }
+ ]
+}

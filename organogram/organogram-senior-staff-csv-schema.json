@@ -1,0 +1,117 @@
+{
+ "fields": [
+  {
+   "name": "Post Unique Reference",
+   "constraints": {
+     "required": true,
+     "unique": true
+   }
+  {
+   "name": "Name"
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Grade (or equivalent)"
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Job Title"
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Job/Team Function"
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Parent Department"
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Organisation"
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Unit"
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Contact Phone"
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Contact E-mail"
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Reports to Senior Post"
+   "constraints": {
+     "required": true,
+     "description": "The 'post unique reference' of the post that this one reports to. The most senior post should put 'xx'."
+   }
+  },
+  {
+   "name": "Salary Cost of Reports (£)"
+   "constraints": {
+     "required": true,
+     "type": http://www.w3.org/2001/XMLSchema#int,
+   }
+  },
+  {
+   "name": "FTE"
+   "constraints": {
+     "required": true,
+     "type": "http://www.w3.org/2001/XMLSchema#float"
+   }
+  },
+  {
+   "name": "Actual Pay Floor (£)"
+   "constraints": {
+     "required": true,
+     "type": http://www.w3.org/2001/XMLSchema#int,
+   },
+  },
+  {
+   "name": "Actual Pay Ceiling (£)"
+   "constraints": {
+     "required": true,
+     "type": http://www.w3.org/2001/XMLSchema#int,
+   },
+  },
+  {
+   "name": "Professional/Occupational Group"
+   "constraints": {
+     "required": true
+   },
+  },
+  {
+   "name": "Notes"
+   "constraints": {
+     "required": false
+   },
+  },
+  {
+   "name": "Valid?"
+   "constraints": {
+     "required": false
+   },
+  }
+ ]
+}
