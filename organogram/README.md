@@ -5,8 +5,6 @@
 The Prime Minister committed central government and agencies to publish organograms of all staff positions, including data on senior staff names, grades, job titles & salaries from October 2010:
 <https://www.gov.uk/government/news/letter-to-government-departments-on-opening-up-data>
 
-NHS bodies now also publish their organogram data in the same way.
-
 NB Local authorities publish their senior staff data in a different format - see the LGA guidance: <http://schemas.opendata.esd.org.uk/OrganisationStructure>
 
 ## Data collection and publication

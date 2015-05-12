@@ -1,48 +1,55 @@
 {
+ "title": "UK Government Organagram - Junior Staff",
  "fields": [
   {
    "name": "Parent Department",
+   "description": "Name of the central government department that oversees the organisation (or if the organisation is a department, just name it again here).",
    "constraints": {
-     "required": true,
-     "description": "For a department itself, just repeat the department name here."
+     "required": true
    }
   },
   {
    "name": "Organisation",
+   "description": "The department or agency for whom the role(s) is for.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Unit",
+   "description": "Where the organisation's staff are split into functional units (or teams/sections etc), give the name of the unit.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Reporting Senior Post",
+   "description": "The 'post unique reference' of the post in the Senior Staff that this one reports to (directly or indirectly).",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Grade",
+   "description": "Grade of role.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Payscale Minimum (£)",
+   "description": "Lowest annual pay for this grade, according to the payscale.",
    "constraints": {
      "required": true,
-     "type": http://www.w3.org/2001/XMLSchema#int,
+     "type": "http://www.w3.org/2001/XMLSchema#int"
    }
   },
   {
    "name": "Payscale Maximum (£)",
+   "description": "Highest annual pay for this grade, according to the payscale.",
    "constraints": {
      "required": true,
-     "type": http://www.w3.org/2001/XMLSchema#int,
+     "type": "http://www.w3.org/2001/XMLSchema#int"
    }
   },
   {
@@ -53,6 +60,7 @@
   },
   {
    "name": "Number of Posts in FTE",
+   "description": "Number of Full Time Equivalents in this role. If this is one full time post then put '1'. Part time roles are a decimal fraction.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#float"

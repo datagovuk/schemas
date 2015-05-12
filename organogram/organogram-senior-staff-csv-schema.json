@@ -1,117 +1,128 @@
 {
+ "title": "UK Government Organagram - Senior Staff",
  "fields": [
   {
    "name": "Post Unique Reference",
+   "description": "Unique id for a post",
    "constraints": {
      "required": true,
      "unique": true
    }
+  },
   {
-   "name": "Name"
+   "name": "Name",
+   "description": "Name of person in role, or 'N/D' if the role is not currently filled.",
    "constraints": {
      "required": true
    }
   },
   {
-   "name": "Grade (or equivalent)"
+   "name": "Grade (or equivalent)",
+   "description": "Grade of role. Grades for senior civil servants are overseen by the Cabinet Office centrally.",
    "constraints": {
      "required": true
    }
   },
   {
-   "name": "Job Title"
+   "name": "Job Title",
    "constraints": {
      "required": true
    }
   },
   {
-   "name": "Job/Team Function"
+   "name": "Job/Team Function",
    "constraints": {
      "required": true
    }
   },
   {
-   "name": "Parent Department"
+   "name": "Parent Department",
+   "description": "Name of the central government department that oversees the organisation (or if the organisation is a department, just name it again here).",
    "constraints": {
      "required": false
    }
   },
   {
-   "name": "Organisation"
+   "name": "Organisation",
+   "description": "The department or agency for whom the role is for.",
    "constraints": {
      "required": true
    }
   },
   {
-   "name": "Unit"
+   "name": "Unit",
+   "description": "Where the organisation's staff are split into functional units (or teams/sections etc), give the name of the unit.",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Contact Phone",
    "constraints": {
      "required": true
    }
   },
   {
-   "name": "Contact Phone"
+   "name": "Contact E-mail",
    "constraints": {
      "required": true
    }
   },
   {
-   "name": "Contact E-mail"
-   "constraints": {
-     "required": true
-   }
-  },
-  {
-   "name": "Reports to Senior Post"
+   "name": "Reports to Senior Post",
    "constraints": {
      "required": true,
      "description": "The 'post unique reference' of the post that this one reports to. The most senior post should put 'xx'."
    }
   },
   {
-   "name": "Salary Cost of Reports (£)"
+   "name": "Salary Cost of Reports (£)",
    "constraints": {
      "required": true,
-     "type": http://www.w3.org/2001/XMLSchema#int,
+     "type": "http://www.w3.org/2001/XMLSchema#int"
    }
   },
   {
-   "name": "FTE"
+   "name": "FTE",
+   "description": "Full Time Equivalent. If this is a full time role then put '1'. Otherwise put a decimal fraction.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#float"
    }
   },
   {
-   "name": "Actual Pay Floor (£)"
+   "name": "Actual Pay Floor (£)",
+   "description": "The annual pay, rounded down to the nearest multiple of £5,000.",
    "constraints": {
      "required": true,
-     "type": http://www.w3.org/2001/XMLSchema#int,
-   },
+     "type": "http://www.w3.org/2001/XMLSchema#int"
+   }
   },
   {
-   "name": "Actual Pay Ceiling (£)"
+   "name": "Actual Pay Ceiling (£)",
+   "description": "The annual pay, rounded up to the nearest multiple of £5,000 minus 1.",
    "constraints": {
      "required": true,
-     "type": http://www.w3.org/2001/XMLSchema#int,
-   },
+     "type": "http://www.w3.org/2001/XMLSchema#int"
+   }
   },
   {
-   "name": "Professional/Occupational Group"
+   "name": "Professional/Occupational Group",
    "constraints": {
      "required": true
-   },
+   }
   },
   {
-   "name": "Notes"
+   "name": "Notes",
    "constraints": {
      "required": false
-   },
+   }
   },
   {
-   "name": "Valid?"
+   "name": "Valid?",
    "constraints": {
      "required": false
-   },
+   }
   }
  ]
 }
