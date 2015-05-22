@@ -1,0 +1,81 @@
+{
+ "title": "Trade union facility time (LGTC)",
+ "description": "Trade union facility engagement and spent on union activities within an organisation.",
+ "fields": [
+  {
+   "name": "Organisation name",
+   "description": "Name of the authority",
+   "type": "string",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Organisation code",
+   "description": "A unique code to identify an organisation, preferably a Linked Data URI. Local authorities can search for theirs here: http://uris.opendata.esd.org.uk and is likely to be from http://opendatacommunities.org or ONS http://tinyurl.com/onsgeog",
+   "type": "string",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Effective date",
+   "description": "Date at which the￼information provided is true. The UK date format (dd/mm/yyyy) should be used.",
+   "type": "date",
+   "format": "fmt:DD/MM/YYYY",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Total representative count",
+   "description": "Total number of trade union representatives (including general, learning and health and safety representatives).",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "FTE representatives count",
+   "description": "Total number (full time equivalent) of staff who are union representatives (including general, learning and health and safety representatives).",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Total representatives majority duty count",
+   "description": "Total number of union representatives who devote at least 50 per cent of their time to union duties.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "FTE representatives majority duty count",
+   "description": "Total number (full time equivalent) of union representatives who devote at least 50 per cent of their time to union duties.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Total estimate spending amount",
+   "description": "A basic estimate of spending on unions, calculated as the number of full time equivalent days spent on union duties multiplied by the average salary.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Relative estimate spending",
+   "description": "A basic estimate of spending on unions as a percentage of the total pay bill, calculated as the total estimate spending divided by the total pay bill multiplied by 100 per cent.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  }
+
+ ]
+}
+

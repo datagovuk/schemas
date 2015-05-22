@@ -3,6 +3,7 @@
     "fields": [
         {
             "name": "Department family",
+            "description": "This should be the name of your [Government] department [or parent department e.g. 'Department of Health' for NHS bodies]. This is needed to identify spend for each departmental area. Parent departments must ensure that all entities within the departmental family use exactly the same description for the name of the department.",
             "type": "string",
             "constraints": {
                 "required": true
@@ -10,6 +11,7 @@
         },
         {
             "name": "Entity",
+            "description": "This should be the name of the individual entity, which for main departments should be a repeat of the name used for the 'family field'. This will allow the identification of the data for each entity",
             "type": "string",
             "constraints": {
                 "required": true
@@ -18,6 +20,7 @@
         {
             "name": "Date",
             "type": "date",
+            "description": "The date is to identify when the transaction took place. The date should ideally be the payment date as recorded in your purchase or general ledger. This is not the date when the supplier receives the funds. The date must be in the UK format DD/MM/YYYY. However, if it is not possible to source the data using the payment date, then you should first look at the possibility of using the date the invoice was input to the system, otherwise you should use the invoice date. Use of date will ensure that transactions are only disclosed once, and must be consistently applied. If you are not using the payment date, you must advise the Treasury of the date you are using and why it is not possible to use payment date. You must also advise what parameters will be used for your disclosures (i.e. how is data being selected for inclusion, so that transactions are only disclosed once)",
             "format": "fmt:DD/MM/YYYY",
             "constraints": {
                 "required": true
@@ -25,6 +28,7 @@
         },
         {
             "name": "Expense type",
+            "description": "This will identify the general nature of the expenditure being recorded e.g. consultancy spend. The account code description as it appears in your chart of accounts should be suitable for this purpose. If you are using your chart of accounts to source expense type, you should use the description, not the account code number. You will need to review your chart of account descriptions to ensure that they are meaningful. The description in this field should not disclose the specifics of individual transactions, i.e. the invoice detail. Entities may find that PSPES categories are more suitable where this has been incorporated into the finance system. However, if you are adopting PSPES categories then this needs to cover all disclosable transactions i.e. the potential for individual expense claims and grant payments. The description on the expense type should enable users of the data to understand where money has been spent. You must avoid high-level descriptions or the use of jargon. You need only report against the original expense type used. Where there have been errors, subsequently corrected by journals, these corrections do not need to be reflected in the published data, but we recommend that you do where possible. You need to decide the source that best describes your expenditure type. If you are not planning to use your chart of accounts as a source, you must notify the Treasury and explain your rationale and how you will ensure that it covers all aspects of your expenditure.",
             "type": "string",
             "constraints": {
                 "required": true
@@ -32,6 +36,7 @@
         },
         {
             "name": "Expense area",
+            "description": "This is the part of the entity that has spent the money. It should represent a meaningful part of your organisation structure or activity. This might be at directorate level, or another appropriate part of your organisation structure, possibly drawn from your cost centre hierarchy. To aid transparency, it is recommended that the structure you select is capable of being mapped onto your published organisational structure. Where a consolidated invoice is received, such as for GPC cards, you may reflect the original coding of the transaction, rather than the subsequent reallocation to different parts of the organisation. However, you must still designate an appropriate expense area.",
             "type": "string",
             "constraints": {
                 "required": true
@@ -39,6 +44,7 @@
         },
         {
             "name": "Supplier",
+            "description": "This should be the name of the supplier as per your vendor record. If the payment you make to the vendor (e.g. a solicitor) is to enable them to make a payment to a third party, you need only disclose the name of the original vendor not the end beneficiary. If the same supplier appears more than once under different vendor records, this is how they will appear in the published record. Each individual transaction must be shown separately. The supplier name should appear in full.",
             "type": "string",
             "constraints": {
                 "required": true
@@ -46,6 +52,7 @@
         },
         {
             "name": "Transaction number",
+            "description": "This should be system transaction number for the payment held by the individual department. This may be useful to the department, should there be any follow up questions about an individual transaction.",
             "type": "string",
             "constraints": {
                 "required": true
@@ -53,6 +60,7 @@
         },
         {
             "name": "Amount",
+            "description": "The amount disclosed should be the amount recorded on the finance system for each individual transaction. To identify the transactions to be disclosed you should identify all individual items of expenditure above the reporting threshold with reference to the total amount payable inclusive of VAT. Transactions should also be selected gross of income. All amounts published must be in sterling and in pounds and pence. If a single invoice has been coded to multiple expense types, and/or expense areas the value shown should be the amount paid against each individual expense types/expense area combination, even where each entry at this level may be less than £25,000. Where possible, recoverable VAT should be excluded from the amount disclosed (i.e. shown on a net basis). Where the recoverable VAT can be excluded from the disclosure it does not need to be separately disclosed, and can be omitted completely. Where removing recoverable VAT reduces the value of the transaction below £25,000, the transaction should still be disclosed. However, if the source of the data being used cannot separate out recoverable VAT then the gross amount should be used instead. You must advise the Treasury if you cannot show amounts net of VAT. Where VAT is irrecoverable the total transaction amount should be disclosed",
             "type": "number",
             "format": "currency",
             "constraints": {
@@ -61,6 +69,7 @@
         },
         {
             "name": "Description",
+            "description": "This should include a brief narrative to provide additional context to the published transaction. This will enable users of the published data to better understand what the money has been spent on. The description can be linked directly from individual lines on purchasing systems, where this is meaningful, or input manually prior to publication. You should decide the source that best describes what the transaction relates to. Where the inclusion of a description leads to data protection issues, then you should remove the description, but must still publish the transaction. An example of the type of description required is included in 4.4 and Annex A (government_spend_guide_2012.pdf - HMT).",
             "type": "string",
             "constraints": {
                 "required": true
@@ -68,6 +77,7 @@
         },
         {
             "name": "Supplier postcode",
+            "description": "Where this information is readily available it should be published. The source should be the supplier address relating to each transaction and can be taken directly from the vendor record on your purchasing systems. This will enable consolidation and comparison of common suppliers across entities.",
             "type": "string",
             "constraints": {
                 "required": false
@@ -75,6 +85,7 @@
         },
         {
             "name": "Supplier type",
+            "description": "This should be large, SME (Small or Medium enterprise),VCS (voluntary and community sector) or Public Sector and will enable users to differentiate and compare spending across the main sectors.",
             "type": "string",
             "constraints": {
                 "required": false
@@ -82,6 +93,7 @@
         },
         {
             "name": "Contract number",
+            "description": "If the transaction relates to a purchase against a contract published on contract finder then the same unique contract reference number should be disclosed.",
             "type": "string",
             "constraints": {
                 "required": false
@@ -89,6 +101,7 @@
         },
         {
             "name": "Project code",
+            "description": "If departments use project codes to differentiate spending then these should be disclosed. This will enable users to aggregate expenditure on particular areas of interest. Where codes are included you must also publish a separate document to explain which project relates to each code, including a description of the main objectives.",
             "type": "string",
             "constraints": {
                 "required": false
@@ -96,6 +109,7 @@
         },
         {
             "name": "Expenditure type",
+            "description": "You should choose between administration, programme and grant payments to enable users to distinguish grant payments from money spent running the organisation.",
             "type": "string",
             "constraints": {
                 "required": false
@@ -103,6 +117,7 @@
         },
         {
             "name": "VAT registration number",
+            "description": "Where this information is readily available, the VAT registration number of each supplier should be collated. For the time being, this data is not to be published. This will allow aggregation of supplier information across entity, even if the supplier descriptions are not consistent.",
             "type": "string",
             "constraints": {
                 "required": false

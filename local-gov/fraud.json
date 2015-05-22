@@ -1,0 +1,148 @@
+{
+ "title": "Counter fraud activities (LGTC)",
+ "description": "Unofficial schema. Based on http://www.local.gov.uk/documents/10180/11655/Transparency+guidance+2014+-+organisation++20141201.pdf/2b67bd0c-511b-4909-801b-e444c77e84b8",
+ "fields": [
+  {
+   "name": "Organisation name",
+   "description": "Name of the authority",
+   "type": "string",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Organisation code",
+   "description": "A unique code to identify an organisation, preferably a Linked Data URI. Local authorities can search for theirs here: http://uris.opendata.esd.org.uk and is likely to be from http://opendatacommunities.org or ONS http://tinyurl.com/onsgeog",
+   "type": "string",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Effective date",
+   "description": "Date at which the￼information provided is true. The UK date format (dd/mm/yyyy) should be used.",
+   "type": "date",
+   "format": "fmt:DD/MM/YYYY",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Total occasions fraud powers",
+   "description": "Number of occasions organisation used powers under the Prevention of Social Housing Fraud (Power to Require Information) (England) Regulations 2014, or similar powers.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Total fraud employees count",
+   "description": "Total number of employees undertaking investigations and prosecutions of fraud.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "FTE fraud employees count",
+   "description": "Total full time equivalent numbers of employees undertaking investigations and prosecutions of fraud.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Total fraud specialists count",
+   "description": "Total number of professionally accredited counter fraud specialists",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "FTE fraud specialist count",
+   "description": "Total full time equivalent numbers of professionally accredited counter fraud specialists.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Fraud spent amount",
+   "description": "Total amount spent by the authority on the investigation and prosecution of fraud.",
+   "type": "number",
+   "format": "currency",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Total investigated fraud",
+   "description": "Total number of fraud cases investigated.",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Total identified fraud",
+   "description": "Total number of occasions on which fraud was identified.",
+   "type": "number",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Value fraud",
+   "description": "Total monetary value of the fraud that was detected.",
+   "type": "number",
+   "format": "currency",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Value fraud recovered",
+   "description": "Total monetary value of the fraud that was recovered.",
+   "type": "number",
+   "format": "currency",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Total investigated irregularities",
+   "description": "Total number of cases of irregularity investigated.",
+   "type": "number",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Total identified irregularities",
+   "description": "Total number of occasions on which an irregularity was identified.",
+   "type": "number",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Value irregularities",
+   "description": "Total monetary value of the irregularity that was detected.",
+   "type": "number",
+   "format": "currency",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Value irregularities recovered",
+   "description": "Total monetary value of the irregularity that was recovered.",
+   "type": "number",
+   "format": "currency",
+   "constraints": {
+     "required": false
+   }
+  }
+ ]
+}

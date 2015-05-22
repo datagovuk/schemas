@@ -1,0 +1,84 @@
+{
+ "title": "Pay multiples (LGTC)",
+ "fields": [
+  {
+   "name": "Organisation name",
+   "description": "Name of the authority",
+   "type": "string",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Organisation code",
+   "description": "A unique code to identify an organisation, preferably a Linked Data URI. Local authorities can search for theirs here: http://uris.opendata.esd.org.uk and is likely to be from http://opendatacommunities.org or ONS http://tinyurl.com/onsgeog",
+   "type": "string",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Effective date",
+   "description": "Date at which the￼information provided is true. The UK date format (dd/mm/yyyy) should be used.",
+   "type": "date",
+   "format": "fmt:DD/MM/YYYY",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Highest salary",
+   "description": "Includes all taxable earnings for the given year, including base salary, variable pay, bonuses, allowances and the cash value of any benefits-in-kind, but exclude changes in pension benefits, which due to their variety and complexity cannot be accurately included in a pay multiple disclosure.",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Median salary",
+   "description": "Median salary of all employees of the organisation.",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Mean salary",
+   "description": "Median salary of all employees of the organisation.",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Ratio",
+   "description": "Ratio of: Highest salary to Median salary. Show as decimal e.g. 6.3, (not a ratio 6:1)",
+   "type": "number",
+   "constraints": {
+     "required": true
+   }
+  },
+  {
+   "name": "Period",
+   "description": "Specify the financial year for which the pay multiple is calculated. For example 2014/15. Needed for submissions to www.paycompare.org.uk.",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Model calculation",
+   "description": "Use code from 0 to 4 to specify what factor was used to calculate the ratio. Needed for submissions to www.paycompare.org.uk. Codes: 0 Unreported or otherwise uncertain; 1 Highest : median of whole workforce; 2 Highest : median of non-chief officers; 3 Highest : mean of whole workforce; 4 Highest : lowest",
+   "type": "number",
+   "constraints": {
+     "required": false
+   }
+  },
+  {
+   "name": "Organisation type",
+   "description": "Use abbreviation to specify type of public organisation. To meet the requirement of www.paycompare.org.uk: BC Borough council; CC County council; DC District council; LBC London borough council; LLP Limited liability partnership; MBC Metropolitan borough council; PC Parish council; PLC Public limited company; PUB Public body; TC Town council; UNA Unitary authority",
+   "constraints": {
+     "required": false
+   }
+  }
+
+ ]
+}
+
+
