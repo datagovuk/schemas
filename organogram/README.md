@@ -13,7 +13,7 @@ The data is collected twice a year - snapshots of the roles on 31st March and 30
 
 At the time of writing the organograms are published at <http://data.gov.uk/organogram/>. The web interfaces includes a drop-down to select different organizations, a "Version" slider to select releases for the data at previous time snapshots and a "Sources" button for links to the Linked Data API, which is a web interface offering navigation through and chunks of the data in RDF serializations.
 
-The Cabinet Office provides departments with XLS template file, which is completed with the data and is then submitted into the data.gov.uk Organogram Tool. This system performs validation, rounds salaries to the nearest 5k and puts the data into RDF format. The RDF is put into the organogram triple store (for SPARQL queries) and served in the Linked Data API.
+The Cabinet Office provides departments with XLS template file, which is completed with the data (using guidance http://data.gov.uk/sites/default/files/Organogram%20Visualisation%20Tool%20v1.0_10.pdf ) and is then submitted into the data.gov.uk Organogram Tool. This system performs validation, rounds salaries to the nearest 5k and converts the data into RDF format. The RDF is put into the organogram triple store (for SPARQL queries) and served in the Linked Data API.
 
 In the near future, the RDF and CSV data will be provided for download in dataset records in data.gov.uk automatically. So far, several organizations have provided their own copies of the organogram data in CSV format on data.gov.uk and gov.uk manually.
 
