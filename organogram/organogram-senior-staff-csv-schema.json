@@ -3,7 +3,7 @@
  "fields": [
   {
    "name": "Post Unique Reference",
-   "description": "Unique id for a post",
+   "description": "Unique id for a post. Individuals not in a post must have Post Unique Reference 0 (zero). Must be unique in the organization, unless it is '0' or the line is duplicate save for name, contact phone/email and notes, meaning it is a job share. Allowed chars 'A-Za-z-'",
    "constraints": {
      "required": true,
      "unique": true
@@ -11,26 +11,28 @@
   },
   {
    "name": "Name",
-   "description": "Name of person in role, or 'N/D' if the role is not currently filled.",
+   "description": "Name of person in role, or 'N/D' if the role is not disclosed, or 'Vacant' if not currently filled, or 'Eliminated' if the role was reported in the last period but no longer exists. Cannot be N/D if the pay is a number.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Grade (or equivalent)",
-   "description": "Grade of role. Grades for senior civil servants are overseen by the Cabinet Office centrally.",
+   "description": "Grade of role. Grades for senior civil servants are overseen by the Cabinet Office centrally. Valid values: SCS4, SCS3, SCS2, SCS1A, SCS1, OF-9, OF-8, OF-7, OF-6",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Job Title",
+   "description": "Cannot be blank or "N/D". Where Post Unique Reference is 0 write 'Not in Post'.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Job/Team Function",
+   "description": "Free text. Maximum 100 words. Cannot be left blank."
    "constraints": {
      "required": true
    }
@@ -44,7 +46,7 @@
   },
   {
    "name": "Organisation",
-   "description": "The department or agency for whom the role is for.",
+   "description": "The department or agency for whom the role is for. Non-abbreviated. 'N/A' only allowed when the Post Unique Reference is 0. Cannot be 'N/D'.",
    "constraints": {
      "required": true
    }
@@ -58,12 +60,14 @@
   },
   {
    "name": "Contact Phone",
+   "description": "If name is not disclosed, provide team details. If Post Unique Reference is 0, put 'N/A'.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Contact E-mail",
+   "description": "If name is not disclosed, provide team details. If Post Unique Reference is 0, put 'N/A'.",
    "constraints": {
      "required": true
    }
@@ -72,11 +76,12 @@
    "name": "Reports to Senior Post",
    "constraints": {
      "required": true,
-     "description": "The 'post unique reference' of the post that this one reports to. The most senior post should put 'xx'."
+     "description": "The 'Post Unique Reference' of the post that this one reports to. The most senior post should put 'XX'. Cannot be left blank."
    }
   },
   {
    "name": "Salary Cost of Reports (£)",
+   "description": "Postitive or zero number. Cannot be left blank - if none write 0.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#int"
@@ -84,7 +89,7 @@
   },
   {
    "name": "FTE",
-   "description": "Full Time Equivalent. If this is a full time role then put '1'. Otherwise put a decimal fraction.",
+   "description": "Full Time Equivalent. If this is a full time role then put '1'. Otherwise put a decimal fraction with 2 decimal places.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#float"
@@ -92,7 +97,7 @@
   },
   {
    "name": "Actual Pay Floor (£)",
-   "description": "The annual pay, rounded down to the nearest multiple of £5,000.",
+   "description": "The annual pay, rounded down to the nearest multiple of £5,000. Can be 'N/A'. Cannot be left blank - if none write 0.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#int"
@@ -108,18 +113,21 @@
   },
   {
    "name": "Professional/Occupational Group",
+   "description": "Allowed values: Communications, Economics, Finance, Human Resources, Information Technology, Internal Audit, Knowledge and Information Management (KIM), Law, Medicine, Military, Operational Delivery, Operational Research, Other, Planning, Policy, Procurement, Programme and Project Management (PPM), Property and asset management, Psychology, Science and Engineering, Social Research, Statisticians, Tax Professionals, Vets",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Notes",
+   "description": "Free text. Can be left blank."
    "constraints": {
      "required": false
    }
   },
   {
    "name": "Valid?",
+   "description": "This is merely a hangover from the source spreadsheet's validation column. Blank and meaningless."
    "constraints": {
      "required": false
    }

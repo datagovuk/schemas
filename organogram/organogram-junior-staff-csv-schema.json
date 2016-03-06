@@ -10,7 +10,7 @@
   },
   {
    "name": "Organisation",
-   "description": "The department or agency for whom the role(s) is for.",
+   "description": "The department or agency for whom the role(s) is for. Not abbreviated.",
    "constraints": {
      "required": true
    }
@@ -24,7 +24,7 @@
   },
   {
    "name": "Reporting Senior Post",
-   "description": "The 'post unique reference' of the post in the Senior Staff that this one reports to (directly or indirectly).",
+   "description": "The 'post unique reference' of the post in the Senior Staff that this one reports to (directly or indirectly). Cannot be blank.",
    "constraints": {
      "required": true
    }
@@ -60,7 +60,7 @@
   },
   {
    "name": "Number of Posts in FTE",
-   "description": "Number of Full Time Equivalents in this role. If this is one full time post then put '1'. Part time roles are a decimal fraction.",
+   "description": "Number of Full Time Equivalents in this role. If this is one full time post then put '1'. Part time roles are a decimal fraction with 2 decimal places.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#float"
@@ -68,6 +68,7 @@
   },
   {
    "name": "Professional/Occupational Group",
+   "description": "Allowed values: Communications, Economics, Finance, Human Resources, Information Technology, Internal Audit, Knowledge and Information Management (KIM), Law, Medicine, Military, Operational Delivery, Operational Research, Other, Planning, Policy, Procurement, Programme and Project Management (PPM), Property and asset management, Psychology, Science and Engineering, Social Research, Statisticians, Tax Professionals, Vets",
    "constraints": {
      "required": true
    }
