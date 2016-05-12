@@ -3,7 +3,7 @@
  "fields": [
   {
    "name": "Post Unique Reference",
-   "description": "Unique id for a post. Individuals not in a post must have Post Unique Reference 0 (zero). Must be unique in the organization, unless it is '0' or the line is duplicate save for name, contact phone/email and notes, meaning it is a job share. Allowed chars 'A-Za-z-'",
+   "description": "Unique id for a post. Individuals not in a post must have Post Unique Reference 0 (zero). Must be unique in the organization, unless it is '0' or the line is duplicate save for name, contact phone/email and notes, meaning it is a job share. Allowed chars '0-9A-Za-z-'. Cannot be 'XX'.",
    "constraints": {
      "required": true,
      "unique": true
@@ -11,7 +11,7 @@
   },
   {
    "name": "Name",
-   "description": "Name of person in role, or 'N/D' if the role is not disclosed, or 'Vacant' if not currently filled, or 'Eliminated' if the role was reported in the last period but no longer exists. Cannot be N/D if the pay is a number.",
+   "description": "Name of person in role, or 'N/D' if the role is not disclosed, or 'Vacant' if not currently filled, or 'Eliminated' if the role was reported in the last period but no longer exists. Must not be 'N/D' if the pay is a number, unless the person is on long term paid leave. Cannot be blank.",
    "constraints": {
      "required": true
    }
@@ -25,14 +25,14 @@
   },
   {
    "name": "Job Title",
-   "description": "Cannot be blank or "N/D". Where Post Unique Reference is 0 write 'Not in Post'.",
+   "description": "Cannot be blank or 'N/D'. Where Post Unique Reference is '0' write 'Not in Post'. When on long term leave write 'Not in Post'.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Job/Team Function",
-   "description": "Free text. Maximum 100 words. Cannot be left blank."
+   "description": "Free text. Maximum 100 words. If the post reference is '0', write 'N/A'. Cannot be left blank.",
    "constraints": {
      "required": true
    }
@@ -53,21 +53,21 @@
   },
   {
    "name": "Unit",
-   "description": "Where the organisation's staff are split into functional units (or teams/sections etc), give the name of the unit.",
+   "description": "Where the organisation's staff are split into functional units (or teams/sections etc), give the name of the unit. When the individual is on long term paid leave, write 'N/A'.",
    "constraints": {
      "required": false
    }
   },
   {
    "name": "Contact Phone",
-   "description": "If name is not disclosed, provide team details. If Post Unique Reference is 0, put 'N/A'.",
+   "description": "Can be the individual or team's details (the latter if the name is not disclosed). If Post Unique Reference is 0 or the post is vacant or the individual is on long term paid leave, put 'N/A'.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Contact E-mail",
-   "description": "If name is not disclosed, provide team details. If Post Unique Reference is 0, put 'N/A'.",
+   "description": "Can be the individual or team's details (the latter if the name is not disclosed). If Post Unique Reference is 0 or the post is vacant or the individual is on long term paid leave, put 'N/A'.",
    "constraints": {
      "required": true
    }
@@ -76,12 +76,12 @@
    "name": "Reports to Senior Post",
    "constraints": {
      "required": true,
-     "description": "The 'Post Unique Reference' of the post that this one reports to. The most senior post should put 'XX'. Cannot be left blank."
+     "description": "The 'Post Unique Reference' of the post that this one reports to. The most senior post should put 'XX'. 'XX' should appear exactly once on the spreadsheet. Cannot be left blank. When the individual is on long term paid leave they may be shown reporting to the HR Director or Permanent Secretary."
    }
   },
   {
    "name": "Salary Cost of Reports (£)",
-   "description": "Postitive or zero number. Cannot be left blank - if none write 0.",
+   "description": "Postitive or zero number. Cannot be left blank - if none write 0. Can be undisclosed 'N/D' if an SCS1/1A (or equivalent) has a team of fewer than five people",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#int"
@@ -97,7 +97,7 @@
   },
   {
    "name": "Actual Pay Floor (£)",
-   "description": "The annual pay, rounded down to the nearest multiple of £5,000. Can be 'N/A'. Cannot be left blank - if none write 0.",
+   "description": "The annual pay, rounded down to the nearest multiple of £5,000. Only for posts of grade SCS2 and above. If SCS1 post write 'N/D'. If the post is vacant, write 'N/A'. Cannot be left blank - if none write 0.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#int"
@@ -105,7 +105,7 @@
   },
   {
    "name": "Actual Pay Ceiling (£)",
-   "description": "The annual pay, rounded up to the nearest multiple of £5,000 minus 1.",
+   "description": "The annual pay, rounded up to the nearest multiple of £5,000 minus 1. Or of the Actual Pay Floor is non-numerical, put here the same value.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#int"
@@ -113,21 +113,22 @@
   },
   {
    "name": "Professional/Occupational Group",
-   "description": "Allowed values: Communications, Economics, Finance, Human Resources, Information Technology, Internal Audit, Knowledge and Information Management (KIM), Law, Medicine, Military, Operational Delivery, Operational Research, Other, Planning, Policy, Procurement, Programme and Project Management (PPM), Property and asset management, Psychology, Science and Engineering, Social Research, Statisticians, Tax Professionals, Vets",
+   "description": "The professional/occupational group relates to the post and not the person. Select the professional/occupational group that best describes the teams' function. This list has been taken from the professional skills for government and at present there are no plans to amend/add to the list. The titles are very generic and should cover the scope of roles within government.",
    "constraints": {
-     "required": true
+     "required": true,
+     "enum": ["Communications", "Economics", "Finance", "Human Resources", "Information Technology", "Internal Audit", "Knowledge and Information Management (KIM)", "Law", "Medicine", "Military", "Operational Delivery", "Operational Research", "Other", "Planning", "Policy", "Procurement", "Programme and Project Management (PPM)", "Property and asset management", "Psychology", "Science and Engineering", "Social Research", "Statisticians", "Tax Professionals", "Vets"]
    }
   },
   {
    "name": "Notes",
-   "description": "Free text. Can be left blank."
+   "description": "Free text. Can be left blank. If the post is vacant, write 'the post became vacant on dd/mm/yy', inserting the correct date.",
    "constraints": {
      "required": false
    }
   },
   {
    "name": "Valid?",
-   "description": "This is merely a hangover from the source spreadsheet's validation column. Blank and meaningless."
+   "description": "This is merely a hangover from the source spreadsheet's validation column. Blank and meaningless.",
    "constraints": {
      "required": false
    }
