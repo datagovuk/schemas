@@ -81,7 +81,7 @@
   },
   {
    "name": "Salary Cost of Reports (£)",
-   "description": "Postitive or zero number. Cannot be left blank - if none write 0. Can be undisclosed 'N/D' if an SCS1/1A (or equivalent) has a team of fewer than five people",
+   "description": "An accumulative total cost of SCS 1 staff and below that report to this post. Staff costs should only be included in one group, i.e. this is not a cumulative total as you go up the hierarchy. Should be a positive or zero number. Cannot be left blank - if none write 0. Can be undisclosed 'N/D' if post has a team of five people or fewer - in this case, see an accompanying note in the 'Notes' column to identify which unique post reference it has been reported under instead, which should be another post in the group, or a more senior post.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#int"
