@@ -1,9 +1,9 @@
 {
- "title": "UK Government Organagram - Senior Staff",
+ "title": "UK Government Organogram - Senior Staff",
  "fields": [
   {
    "name": "Post Unique Reference",
-   "description": "Unique id for a post. Individuals not in a post must have Post Unique Reference 0 (zero). Must be unique in the organization, unless it is '0' or the line is duplicate save for name, contact phone/email and notes, meaning it is a job share. Allowed chars '0-9A-Za-z-'. Cannot be 'XX'.",
+   "description": "Unique id for a post. Individuals who are paid but are not in a post (e.g. gardening leave) must have Post Unique Reference 0 (zero). Must be unique in the organization, unless it is '0' or the line is duplicate save for name, contact phone/email and notes, meaning it is a job share. A post that remains from release to release should keep its value the same too. Allowed characters: '0-9A-Za-z-'. Cannot be 'XX'.",
    "constraints": {
      "required": true,
      "unique": true
@@ -11,21 +11,21 @@
   },
   {
    "name": "Name",
-   "description": "Name of person in role, or 'N/D' if the role is not disclosed, or 'Vacant' if not currently filled, or 'Eliminated' if the role was reported in the last period but no longer exists. Must not be 'N/D' if the pay is a number, unless the person is on long term paid leave. Cannot be blank.",
+   "description": "Name of person in role, or 'N/D' if the role is not disclosed (Grade is SCS1), or 'Vacant' if not currently filled, or 'Eliminated' if the role was reported in the last period but no longer exists. Must not be 'N/D' if the pay is a number, unless the person is on long term paid leave. Cannot be blank.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Grade (or equivalent)",
-   "description": "Grade of role. Grades for senior civil servants are overseen by the Cabinet Office centrally. Valid values: SCS4, SCS3, SCS2, SCS1A, SCS1, OF-9, OF-8, OF-7, OF-6",
+   "description": "Grade of role. Grades for senior civil servants are overseen by the Cabinet Office centrally. Valid values: SCS4, SCS3, SCS2, SCS1A, SCS1, OF-9, OF-8, OF-7, OF-6. Note: the first round of CSVs in 2011 this column was titled just \"Grade\".",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Job Title",
-   "description": "Cannot be blank or 'N/D'. Where Post Unique Reference is '0' write 'Not in Post'. When on long term leave write 'Not in Post'.",
+   "description": "Cannot be blank or 'N/D'. Where Post Unique Reference is '0' write 'Not in post'. When on long term leave write 'Not in post'.",
    "constraints": {
      "required": true
    }
@@ -39,9 +39,9 @@
   },
   {
    "name": "Parent Department",
-   "description": "Name of the central government department that oversees the organisation (or if the organisation is a department, just name it again here).",
+   "description": "Name of the central government department that oversees or sponsors or funds the organisation (or if the organisation is a department, just name it again here).",
    "constraints": {
-     "required": false
+     "required": true
    }
   },
   {
@@ -60,14 +60,14 @@
   },
   {
    "name": "Contact Phone",
-   "description": "Can be the individual or team's details (the latter if the name is not disclosed). If Post Unique Reference is 0 or the post is vacant or the individual is on long term paid leave, put 'N/A'.",
+   "description": "Can be the individual or team's details (the latter if the name is not disclosed). If Post Unique Reference is 0 or the post is vacant or eliminated or the individual is on long term paid leave, put 'N/A'.",
    "constraints": {
      "required": true
    }
   },
   {
    "name": "Contact E-mail",
-   "description": "Can be the individual or team's details (the latter if the name is not disclosed). If Post Unique Reference is 0 or the post is vacant or the individual is on long term paid leave, put 'N/A'.",
+   "description": "Can be the individual or team's details (the latter if the name is not disclosed). If Post Unique Reference is 0 or the post is vacant or eliminated or the individual is on long term paid leave, put 'N/A'.",
    "constraints": {
      "required": true
    }
@@ -97,7 +97,7 @@
   },
   {
    "name": "Actual Pay Floor (£)",
-   "description": "The annual pay, rounded down to the nearest multiple of £5,000. Only for posts of grade SCS2 and above. If SCS1 post write 'N/D'. If the post is vacant, write 'N/A'. Cannot be left blank - if none write 0.",
+   "description": "The annual pay, rounded down to the nearest multiple of £5,000. Only for posts of grade SCS2 and above. If SCS1 post write 'N/A' (this might be changed to N/D in future as that would make more sense). If the post is vacant, write '0'. Cannot be left blank - if none write 0.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#int"
@@ -105,7 +105,7 @@
   },
   {
    "name": "Actual Pay Ceiling (£)",
-   "description": "The annual pay, rounded up to the nearest multiple of £5,000 minus 1. Or of the Actual Pay Floor is non-numerical, put here the same value.",
+   "description": "The annual pay, rounded up to the nearest multiple of £5,000 minus 1. Or if the Actual Pay Floor is 0 or non-numerical, put here the same value.",
    "constraints": {
      "required": true,
      "type": "http://www.w3.org/2001/XMLSchema#int"
